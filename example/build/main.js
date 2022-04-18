@@ -38446,7 +38446,7 @@
       matGreenTransparent.opacity = 0.5;
 
       const matBlueTransparent = gizmoMaterial.clone();
-      matBlueTransparent.color.setHex(0x006699);
+      matBlueTransparent.color.setHex(0x0000ff);
       matBlueTransparent.opacity = 0.5;
 
       const matWhiteTransparent = gizmoMaterial.clone();
@@ -99212,7 +99212,7 @@
     }
     static getPlaneMaterial() {
       return new MeshBasicMaterial({
-        color: 0xf08200,
+        color: 0xd08900,
         side: DoubleSide,
         transparent: true,
         opacity: 0.2
@@ -123893,7 +123893,13 @@
 
     viewer.IFC.loader.ifcManager.parser.setupOptionalCategories({
       [IFCSPACE]: false,
-      [IFCOPENINGELEMENT]: false
+      [IFCOPENINGELEMENT]: false,
+      [IFCWALLSTANDARDCASE]: false,
+      [IFCWALL]: false,
+      [IFCWINDOW]: false,
+      [IFCCURTAINWALL]: false,
+      [IFCMEMBER]: false,
+      [IFCPLATE]: false
     });
 
     model = await viewer.IFC.loadIfc(event.target.files[0], false);

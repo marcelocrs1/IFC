@@ -76,7 +76,13 @@ const loadIfc = async (event) => {
 
   viewer.IFC.loader.ifcManager.parser.setupOptionalCategories({
     [IFCSPACE]: false,
-    [IFCOPENINGELEMENT]: false
+    [IFCOPENINGELEMENT]: false,
+    [IFCWALLSTANDARDCASE]: false,
+    [IFCWALL]: false,
+    [IFCWINDOW]: false,
+    [IFCCURTAINWALL]: false,
+    [IFCMEMBER]: false,
+    [IFCPLATE]: false
   });
 
   model = await viewer.IFC.loadIfc(event.target.files[0], false);
