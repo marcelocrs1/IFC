@@ -1,4 +1,8 @@
 * {
+    background-image: url('./resources/BIMSightbg.png');
+    background-repeat:no-repeat;
+    background-size: 30%;
+    background-position: bottom;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
