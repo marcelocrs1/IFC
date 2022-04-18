@@ -38435,7 +38435,7 @@
       matGreen.color.setHex(0x00ff00);
 
       const matBlue = gizmoMaterial.clone();
-      matBlue.color.setHex(0x0000ff);
+      matBlue.color.setHex(0x006699);
 
       const matRedTransparent = gizmoMaterial.clone();
       matRedTransparent.color.setHex(0xff0000);
@@ -38446,7 +38446,7 @@
       matGreenTransparent.opacity = 0.5;
 
       const matBlueTransparent = gizmoMaterial.clone();
-      matBlueTransparent.color.setHex(0x0000ff);
+      matBlueTransparent.color.setHex(0x006699);
       matBlueTransparent.opacity = 0.5;
 
       const matWhiteTransparent = gizmoMaterial.clone();
@@ -39075,14 +39075,14 @@
 
         if (this.enabled && this.axis) {
           if (handle.name === this.axis) {
-            handle.material.color.setHex(0xffff00);
+            handle.material.color.setHex(0x000);
             handle.material.opacity = 1.0;
           } else if (
             this.axis.split('').some(function (a) {
               return handle.name === a;
             })
           ) {
-            handle.material.color.setHex(0xffff00);
+            handle.material.color.setHex(0x000);
             handle.material.opacity = 1.0;
           }
         }
@@ -99212,7 +99212,7 @@
     }
     static getPlaneMaterial() {
       return new MeshBasicMaterial({
-        color: 0xffff00,
+        color: 0xf08200,
         side: DoubleSide,
         transparent: true,
         opacity: 0.2
