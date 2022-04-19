@@ -1216,7 +1216,7 @@
   "resolved" "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-1.0.1.tgz"
   "version" "1.0.1"
 
-"BIMSIGHT@file:C:\\Users\\BIMMS - MSantos\\OneDrive - Bimms Lda\\Ambiente de Trabalho\\teste\\IFC\\example":
+"BIMSIGHT@file:C:\\Users\\BIMMS - DFrancisco\\Documents\\ifc_marcelo\\IFC\\example":
   "resolved" "file:example"
   "version" "1.0.169"
   dependencies:
@@ -5356,7 +5356,7 @@
     "three-mesh-bvh" "^0.5.2"
     "web-ifc" "^0.0.33"
 
-"web-ifc-viewer@1.0.169", "web-ifc-viewer@file:C:\\Users\\BIMMS - MSantos\\OneDrive - Bimms Lda\\Ambiente de Trabalho\\teste\\IFC\\viewer":
+"web-ifc-viewer@1.0.169", "web-ifc-viewer@file:C:\\Users\\BIMMS - DFrancisco\\Documents\\ifc_marcelo\\IFC\\viewer":
   "resolved" "file:viewer"
   "version" "1.0.169"
   dependencies:
