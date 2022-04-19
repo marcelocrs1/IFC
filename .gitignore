@@ -4,3 +4,4 @@ node_modules/
 viewer/dist/
 
 debug.log
+yarn.lock

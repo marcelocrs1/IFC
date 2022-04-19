@@ -14,6 +14,21 @@ import { MeshBasicMaterial, LineBasicMaterial, Color } from 'three';
 import { ClippingEdges } from 'web-ifc-viewer/dist/components/display/clipping-planes/clipping-edges';
 import Stats from 'stats.js/src/Stats';
 
+/**/
+// import { MeshLambertMaterial } from 'three';
+// import { IFCLoader } from 'web-ifc-three/IFCLoader';
+//   // Creates subset material
+//   const preselectMat = new MeshLambertMaterial({
+//     transparent: true,
+//     opacity: 0.6,
+//     color: 0x38d1ff,
+//     depthTest: true
+//   });
+
+//  const ifcLoader = new IFCLoader();
+
+/**/
+
 const container = document.getElementById('viewer-container');
 const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xc4d3d2) });
 // viewer.axes.setAxes();
@@ -118,6 +133,7 @@ const handleKeyDown = async (event) => {
 
 window.onmousemove = () => viewer.IFC.selector.prePickIfcItem();
 window.onkeydown = handleKeyDown;
+
 window.ondblclick = async () => {
   if (viewer.clipper.active) {
     viewer.clipper.createPlane();
@@ -127,6 +143,10 @@ window.ondblclick = async () => {
     const { modelID, id } = result;
     const props = await viewer.IFC.getProperties(modelID, id, true, false);
     console.log(props);
+
+    const ifcManager = viewer.IFC;
+    console.log(ifcManager);
+    ifcManager.selector.defPreselectMat.color = { b: 0.5, g: 0.8, r: 0.9 };
   }
 };
 
