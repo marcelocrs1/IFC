@@ -118,9 +118,9 @@ const loadIfc = async (event) => {
   /* ======== Cores do seletor ======== */
   const ifcManager = viewer.IFC;
   console.log(ifcManager);
-  ifcManager.selector.defPreselectMat.color = { b: 0.6, g: 0, r: 0.0 };
+  ifcManager.selector.defPreselectMat.color = { b: 1, g: 0.4, r: 0.2 };
   ifcManager.selector.defHighlightMat.color = { b: 0.9, g: 0.8, r: 0.5 };
-  ifcManager.selector.defSelectMat.color = { b: 0.8, g: 0.6, r: 0 };
+  ifcManager.selector.defSelectMat.color = { b: 1, g: 0.8, r: 0.2 };
 };
 
 const inputElement = document.createElement('input');
