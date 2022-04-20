@@ -35,7 +35,7 @@ const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xc4d3d2
 // viewer.grid.setGrid();
 viewer.shadowDropper.darkness = 1.5;
 
-// Set up stats
+/* ======== Set up stats ======== */
 const stats = new Stats();
 stats.showPanel(2);
 document.body.append(stats.dom);
@@ -43,7 +43,7 @@ stats.dom.style.right = '0px';
 stats.dom.style.left = 'auto';
 viewer.context.stats = stats;
 
-// viewer.IFC.loader.ifcManager.useWebWorkers(true, 'files/IFCWorker.js');
+/* ======== viewer.IFC.loader.ifcManager.useWebWorkers(true, 'files/IFCWorker.js'); ======== */
 viewer.IFC.setWasmPath('files/');
 
 viewer.IFC.loader.ifcManager.applyWebIfcConfig({
@@ -51,7 +51,7 @@ viewer.IFC.loader.ifcManager.applyWebIfcConfig({
   COORDINATE_TO_ORIGIN: true
 });
 
-// Setup loader
+/* ======== Configuração do loader ======== */
 
 const lineMaterial = new LineBasicMaterial({ color: 0x555555 });
 const baseMaterial = new MeshBasicMaterial({ color: 0xffffff, side: 2 });
@@ -108,12 +108,19 @@ const loadIfc = async (event) => {
     ClippingEdges.forceStyleUpdate = true;
   }
 
-  // await createFill(model.modelID);
+  /* ======== await createFill(model.modelID); ======== */
   viewer.edges.create(`${model.modelID}`, model.modelID, lineMaterial, baseMaterial);
 
   await viewer.shadowDropper.renderShadow(model.modelID);
 
   overlay.classList.add('hidden');
+
+  /* ======== Cores do seletor ======== */
+  const ifcManager = viewer.IFC;
+  console.log(ifcManager);
+  ifcManager.selector.defPreselectMat.color = { b: 0.6, g: 0, r: 0.0 };
+  ifcManager.selector.defHighlightMat.color = { b: 0.9, g: 0.8, r: 0.5 };
+  ifcManager.selector.defSelectMat.color = { b: 0.8, g: 0.6, r: 0 };
 };
 
 const inputElement = document.createElement('input');
@@ -144,13 +151,15 @@ window.ondblclick = async () => {
     const props = await viewer.IFC.getProperties(modelID, id, true, false);
     console.log(props);
 
-    const ifcManager = viewer.IFC;
-    console.log(ifcManager);
-    ifcManager.selector.defPreselectMat.color = { b: 0.5, g: 0.8, r: 0.9 };
+    // const ifcManager = viewer.IFC;
+    // console.log(ifcManager);
+    // ifcManager.selector.defPreselectMat.color = { b: 0.6, g: 0, r: 0.0 };
+    // ifcManager.selector.defHighlightMat.color = { b: 0.9, g: 0.8, r: 0.5 };
+    // ifcManager.selector.defSelectMat.color = { b: 0.8, g: 0.6, r: 0 };
   }
 };
 
-//Setup UI
+/* ======== Configurações de interface dos botões laterais ======== */
 const loadButton = createSideMenuButton('./resources/folder-icon.svg');
 loadButton.addEventListener('click', () => {
   loadButton.blur();
