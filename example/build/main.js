@@ -115819,6 +115819,11 @@
       await viewer.shadowDropper.renderShadow(model.modelID);
 
       overlay.classList.add('hidden');
+      const ifcManager = viewer.IFC;
+      console.log(ifcManager);
+      ifcManager.selector.defPreselectMat.color = { b: 0.6, g: 0, r: 0.0 };
+      ifcManager.selector.defHighlightMat.color = { b: 0.9, g: 0.8, r: 0.5 };
+      ifcManager.selector.defSelectMat.color = { b: 0.8, g: 0.6, r: 0 };
     };
 
     const inputElement = document.createElement('input');
@@ -115849,9 +115854,11 @@
         const props = await viewer.IFC.getProperties(modelID, id, true, false);
         console.log(props);
 
-        const ifcManager = viewer.IFC;
-        console.log(ifcManager);
-        ifcManager.selector.defPreselectMat.color = { b: 0, g: 0, r: 0 };
+        // const ifcManager = viewer.IFC;
+        // console.log(ifcManager);
+        // ifcManager.selector.defPreselectMat.color = { b: 0.6, g: 0, r: 0.0 };
+        // ifcManager.selector.defHighlightMat.color = { b: 0.9, g: 0.8, r: 0.5 };
+        // ifcManager.selector.defSelectMat.color = { b: 0.8, g: 0.6, r: 0 };
       }
     };
 
