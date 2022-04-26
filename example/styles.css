@@ -7,6 +7,8 @@
 
 html, body {
     overflow: hidden;
+    border-top: 4px solid #2d3b40;
+    /* border-right: 4px solid #2d3b40;; */
 }
 
 .hidden {
@@ -114,7 +116,7 @@ html, body {
 .watermark{
     position: absolute;
     z-index: 0;
-    background-image: url('./resources/BIMSightbg.png');
+    background-image: url('./resources/bimsight2.png');
     background-repeat:no-repeat;
     background-position: center;
     background-size:contain;
