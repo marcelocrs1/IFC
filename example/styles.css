@@ -7,6 +7,8 @@
 
 html, body {
     overflow: hidden;
+    border-top: 4px solid #2d3b40;
+    /* border-right: 4px solid #2d3b40;; */
 }
 
 .hidden {
