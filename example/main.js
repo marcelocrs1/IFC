@@ -30,7 +30,7 @@ import Stats from 'stats.js/src/Stats';
 /**/
 
 const container = document.getElementById('viewer-container');
-const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0x2d3b40) });
+const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0x4b5c62) });
 // viewer.axes.setAxes();
 // viewer.grid.setGrid();
 viewer.shadowDropper.darkness = 1.5;
