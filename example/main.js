@@ -54,7 +54,7 @@ viewer.IFC.loader.ifcManager.applyWebIfcConfig({
 /* ======== Configuração do loader ======== */
 
 const lineMaterial = new LineBasicMaterial({ color: 0x555555 });
-const baseMaterial = new MeshBasicMaterial({ color: 0xffffff, side: 2 });
+const baseMaterial = new MeshBasicMaterial({ color: 0xffffff, side: 2, fog: true });
 
 let first = true;
 let model;
@@ -177,3 +177,17 @@ dropBoxButton.addEventListener('click', () => {
   dropBoxButton.blur();
   viewer.dropbox.loadDropboxIfc();
 });
+
+// Event that gets executed when an item is picked
+async function pick(event) {
+  const found = cast(event)[0];
+  if (found) {
+    const index = found.faceIndex;
+    const geometry = found.object.geometry;
+    const ifc = ifcLoader.ifcManager;
+    const id = ifc.getExpressId(geometry, index);
+    const modelID = found.object.modelID;
+    const props = await ifc.getItemProperties(modelID, id);
+    output.innerHTML = JSON.stringify(props, null, 2);
+  }
+}
